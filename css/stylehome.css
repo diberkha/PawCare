@@ -1,0 +1,49 @@
+/* Gaya untuk tombol Login dan Register */
+.nav-item a.login-btn,
+.nav-item a.register-btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-left: 10px;
+    box-shadow: 0 0 0 1px #007bff; /* Efek border menggunakan box shadow */
+}
+
+/* Gaya untuk tombol Login */
+.nav-item a.login-btn {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+/* Gaya untuk tombol Register */
+.nav-item a.register-btn {
+    color: #007bff;
+}
+
+/* Hover effect */
+.nav-item a:hover {
+    text-decoration: none;
+}
+
+/* Hover effect untuk tombol Login */
+.nav-item a.login-btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 0 1px #0056b3; /* Efek border pada hover */
+}
+
+/* Hover effect untuk tombol Register */
+.nav-item a.register-btn:hover {
+    color: #0056b3;
+    box-shadow: 0 0 0 1px #0056b3; /* Efek border pada hover */
+}
+
+/* Gaya untuk elemen navbar-brand */
+.navbar-brand {
+	margin-right: 100px; /* Atur margin kanan sesuai kebutuhan Anda */
+}
+/* Gaya untuk foto profil */
+.user-avatar {
+    width: 30px; /* Ukuran gambar */
+    height: 30px;
+    border-radius: 50%; /* Untuk membuat gambar berbentuk bulat */
+    object-fit: cover; /* Untuk mempertahankan aspek gambar */
+    margin-right: 5px; /* Atur margin kanan sesuai kebutuhan Anda */
+}
