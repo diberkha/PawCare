@@ -38,7 +38,7 @@
                 <li class="nav-item"><a href="{{ route('pawcare.login') }}" class="login-btn">Sign In</a></li>
                 <li class="nav-item"><a href="{{ route('pawcare.register') }}" class="register-btn">Register</a></li>
                 @endif
-                </ul>
+            </ul>
         </div>
     </div>
 </nav>

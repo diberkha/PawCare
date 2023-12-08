@@ -6,17 +6,18 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 
 class AuthController extends Controller
 {
     public function index()
     {
-        return view('paw-user.login');
+        return view('auth.login');
     }
 
     public function create()
     {
-        return view('paw-user.register');
+        return view('auth.register');
     }
 
     public function login(Request $request)
@@ -30,7 +31,7 @@ class AuthController extends Controller
             'password' => $request->input('password'),
         ];
         if(Auth::attempt($data)){
-            return redirect('/');
+            return redirect('/home');
         }else{
             Session()->flash('error', 'Email atau Password Salah');
             return back();
@@ -59,7 +60,12 @@ class AuthController extends Controller
         $user->country = $request->country;
         $user->phoneNumber = $request->phoneNumber;
         $user->save();
-        return redirect ('/login');
+
+        Auth::login($user);
+        
+        event(new Registered($user));
+
+        return redirect ('/emailVerify');
     }
 
     public function logout()

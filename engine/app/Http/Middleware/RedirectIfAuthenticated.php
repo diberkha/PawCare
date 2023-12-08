@@ -24,6 +24,12 @@ class RedirectIfAuthenticated
                 return redirect(RouteServiceProvider::HOME);
             }
         }
+        if ($request->user() && !$request->user()->hasVerifiedEmail()) {
+            return $request->expectsJson()
+                        ? abort(403, 'Your email address is not verified.')
+                        : redirect('/emailVerify'); 
+        }
+    
 
         return $next($request);
     }

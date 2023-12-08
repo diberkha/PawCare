@@ -1,0 +1,214 @@
+.navbar {
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    margin-left: 80px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.search-input {
+    width: 300px;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    outline: none;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.navbar-btns {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-btns button {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    height: 50px;
+}
+
+.btn-make-appointment {
+    background-color: black !important;
+    /* !important digunakan untuk memastikan prioritas tertinggi */
+    color: white;
+}
+
+.navbar-btns button:last-child {
+    margin-right: 1;
+}
+
+/* Tambahkan CSS kustom di sini */
+.container {
+    margin-top: 20px;
+}
+
+.right-section {
+    flex: 1;
+    padding: 20px;
+    align-items: center;
+}
+
+.left-section {
+    flex: 1;
+    padding: 20px;
+
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section-paragraph {
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: flex;
+}
+
+.button-group button {
+    margin-right: 10px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#carousel-title {
+    text-align: center;
+    /* Pusatkan teks secara horizontal */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* Ganti 'YourChosenFont' dengan nama font yang diinginkan */
+    font-size: 36px;
+    /* Sesuaikan ukuran font */
+    font-weight: bold;
+    /* Atur ketebalan font jika diperlukan */
+    color: #333;
+    /* Warna teks yang diinginkan */
+    margin-top: 50px;
+    /* Sesuaikan margin atas agar berada di tengah vertikal */
+}
+
+.health-section {
+    padding: 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.carousel-container {
+    margin-top: 20px;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.carousel-item {
+    height: 400px;
+    /* Sesuaikan tinggi carousel dengan gambar Anda */
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar untuk menutupi seluruh area carousel */
+    background-position: center;
+    /* Posisi gambar di tengah carousel */
+    color: white;
+    /* Warna teks untuk kontras dengan gambar */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Bayangan teks agar terlihat lebih jelas */
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Latar belakang semi-transparan untuk caption agar lebih mudah dibaca */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.carousel-caption h3,
+.carousel-caption p {
+    margin: 0;
+    /* Menghapus margin bawaan untuk tata letak yang lebih baik */
+}
+
+hr {
+    border-color: white;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.footer-menu li {
+    margin: 0 15px;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+    color: #ffc107;
+    /* Warna kuning saat dihover */
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #868e96;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
