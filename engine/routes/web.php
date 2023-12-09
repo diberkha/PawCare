@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ Route::post('/proseslogin', [AuthController::class, 'login'])->name('pawcare.pro
 Route::get('/register', [AuthController::class, 'create'])->name('pawcare.register'); 
 Route::post('/prosesregister', [AuthController::class, 'register'])->name('pawcare.prosesregister'); 
 Route::get('/proseslogout', [AuthController::class, 'logout'])->name('pawcare.logout'); 
-Route::get('/emailVerify', function () {
+Route::get('/email-verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
  
@@ -54,8 +55,12 @@ Route::group(['middleware' => ['auth','ceklevel:admin']], function () {
 
 Route::group(['middleware' => ['auth','ceklevel:admin,user']], function () {
     Route::get('/home', [UserController::class, 'home'])->name('pawcare.dash');
+    Route::get('/my-profile', [UserController::class, 'myprofile'])->name('pawcare.myprofile');
+    Route::get('/edit-profile', [UserProfileController::class, 'edit'])->name('pawcare.editprofile');
+    Route::put('/update-profile', [UserProfileController::class, 'update'])->name('pawcare.updateprofile');
+    
 });
 
 Route::group(['middleware' => ['auth','verified']], function () {
-    
+    Route::get('/appointment', [UserController::class, 'appointment'])->name('pawcare.appointment');
 });

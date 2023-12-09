@@ -17,12 +17,12 @@
             <i class="material-icons">assignment</i> My Activity
         </button>
         @if (empty(auth()->user()->foto))
-        <button class="btn btn-secondary">
+        <button class="btn btn-secondary" onclick="location.href=`{{route('pawcare.myprofile')}}`">
             <img src="images/userprofilepic/random.jpg" alt="User Profile" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;"> {{auth()->user()->name}}
         </button>
         @endif
         @if (!empty(auth()->user()->foto))
-        <button class="btn btn-secondary">
+        <button class="btn btn-secondary" onclick="location.href=`{{route('pawcare.myprofile')}}`">
             <img src="{{ asset('images/userprofilepic/' . auth()->user()->foto) }}" alt="User Profile" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;"> {{auth()->user()->name}}
         </button>
         @endif

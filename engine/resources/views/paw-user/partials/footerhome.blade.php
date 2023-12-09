@@ -4,7 +4,7 @@
         <ul class="footer-menu">
             <li><a href="#">My Activity</a></li>
             <li><a href="#">Profile</a></li>
-            <li><a href="#">Make an appointment</a></li>
+            <li><a href="{{ route('pawcare.appointment') }}">Make an appointment</a></li>
             <li><a href="#">Chat with a Doctor</a></li>
             <li><a href="#">Explore</a></li>
         </ul>

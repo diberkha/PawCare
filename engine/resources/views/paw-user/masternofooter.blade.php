@@ -9,7 +9,6 @@
 <body>
     @include('paw-user.partials.navbarhome')
     @yield('content')
-    @include('paw-user.partials.footerhome')
 
     @stack('aditional-js')
 </body>

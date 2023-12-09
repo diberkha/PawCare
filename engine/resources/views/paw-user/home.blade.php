@@ -21,7 +21,9 @@
             </p>
         </div>
         <div class="button-group">
-            <button class="btn btn-primary btn-make-appointment">Make an appointment</button>
+            <button class="btn btn-primary btn-make-appointment" onclick="location.href=`{{ route('pawcare.appointment') }}`">
+                Make an appointment
+            </button>
             <button class="btn btn-secondary">Explore</button>
         </div>
     </div>

@@ -65,7 +65,7 @@ class AuthController extends Controller
         
         event(new Registered($user));
 
-        return redirect ('/emailVerify');
+        return redirect ('/email-verify');
     }
 
     public function logout()
