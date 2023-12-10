@@ -63,4 +63,6 @@ Route::group(['middleware' => ['auth','ceklevel:admin,user']], function () {
 
 Route::group(['middleware' => ['auth','verified']], function () {
     Route::get('/appointment', [UserController::class, 'appointment'])->name('pawcare.appointment');
+    Route::get('/confirm-user', [UserController::class, 'confirmuser'])->name('pawcare.confirmuser');
+    Route::get('/form', [UserController::class, 'petform'])->name('pawcare.petform');
 });

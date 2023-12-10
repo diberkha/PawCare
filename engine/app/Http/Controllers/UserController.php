@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 
 class UserController extends Controller
 {
@@ -18,5 +17,11 @@ class UserController extends Controller
     }
     public function myprofile() {
         return view('paw-user.myprofile');
+    }
+    public function confirmuser() {
+        return view('paw-user.confirmuser');
+    }
+    public function petform() {
+        return view('paw-user.petform');
     }
 }

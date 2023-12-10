@@ -18,13 +18,13 @@
     <figure>
         <img src="images/gallery-1.jpg" alt="Cat Image">
         <figcaption>Cat</figcaption>
-        <p><a href="next_page_cat.html">Next ></a></p>
+        <p><a href="{{route('pawcare.confirmuser')}}">Next ></a></p>
     </figure>
 
     <figure>
         <img src="images/gallery-123.png" alt="Dog Image">
         <figcaption>Dog</figcaption>
-        <p><a href="next_page_dog.html">Next ></a></p>
+        <p><a href="{{route('pawcare.confirmuser')}}">Next ></a></p>
     </figure>
 </section>
 @endsection

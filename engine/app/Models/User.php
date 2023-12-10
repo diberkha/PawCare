@@ -18,6 +18,12 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array<int, string>
      */
+
+    public function pets()
+    {
+        return $this->hasMany(Pet::class);
+    }
+
     protected $fillable = [
         'name',
         'email',

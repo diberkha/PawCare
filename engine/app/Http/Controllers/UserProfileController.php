@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UserProfileController extends Controller
 {
@@ -13,8 +14,8 @@ class UserProfileController extends Controller
 
     public function update(Request $request)
     {
-        $user = auth()->user();
-
+        $id = auth()->user()->id;
+        $user = User::findOrFail($id);
         $user->name = $request->input('name');
         $user->country = $request->input('country');
 
