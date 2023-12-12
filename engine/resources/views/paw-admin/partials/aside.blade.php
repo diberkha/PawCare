@@ -10,9 +10,16 @@
       <!-- Sidebar user panel (optional) -->
       @if(!empty(auth()->user()->name))
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        @if (!empty(auth()->user()->foto))
         <div class="image">
           <img src="{{ asset('images/userprofilepic/' . auth()->user()->foto) }}" class="img-circle elevation-2" alt="User Image">
         </div>
+        @endif
+        @if (empty(auth()->user()->foto))
+        <div class="image">
+          <img src="images/userprofilepic/random.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        @endif
         <div class="info">
           <a href="#" class="d-block">{{ auth()->user()->name }}</a>
         </div>
@@ -64,9 +71,9 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{route('pawcare.adminklinik')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Daftar Agama</p>
+                  <p>Daftar Klinik</p>
               </li>
             </ul>
           </li>

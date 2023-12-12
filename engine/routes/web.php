@@ -51,6 +51,9 @@ Route::get('/', [UserController::class, 'index'])->name('pawcare.home');
 
 Route::group(['middleware' => ['auth','ceklevel:admin']], function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('pawcare.admindash');
+    Route::get('/adminklinik', [AdminController::class, 'showKlinik'])->name('pawcare.adminklinik');
+    Route::get('/addklinik', [AdminController::class, 'createKlinik'])->name('pawcare.addKlinik');
+    Route::post('/prosesaddklinik', [AdminController::class, 'storeKlinik'])->name('pawcare.prosesaddklinik');
 });
 
 Route::group(['middleware' => ['auth','ceklevel:admin,user']], function () {
