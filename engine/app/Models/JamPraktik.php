@@ -12,6 +12,12 @@ class JamPraktik extends Model
     protected $table = 'jam_praktik';
     protected $primaryKey = 'id';
 
+    protected $fillable = [
+        'nama_klinik',
+        'mulai',
+        'selesai',
+    ];
+
     public function klinik()
     {
         return $this->belongsTo(Klinik::class, 'klinik_id');

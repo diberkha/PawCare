@@ -31,7 +31,7 @@
                         <h6>Full Name</h6>
                         <p>{{auth()->user()->name}}</p>
                     </div>
-                    <a href="" class="btn btn-dark btn-block mt-3 float-right">Next</a>
+                    <a href="{{route('pawcare.cliniclist')}}" class="btn btn-dark btn-block mt-3 float-right">Next</a>
                 </div>
             </div>
         </div>

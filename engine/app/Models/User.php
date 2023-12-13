@@ -19,9 +19,9 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<int, string>
      */
 
-    public function pets()
+    public function appointments()
     {
-        return $this->hasMany(Pet::class);
+        return $this->hasMany(Appointment::class);
     }
 
     protected $fillable = [

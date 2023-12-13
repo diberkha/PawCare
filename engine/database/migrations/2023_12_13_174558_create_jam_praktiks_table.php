@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('jam_praktik', function (Blueprint $table) {
             $table->id();
             $table->biginteger('klinik_id')->unsigned();
+            $table->string('nama_klinik');
             $table->time('mulai');
             $table->time('selesai');
             $table->foreign('klinik_id')->references('id')->on('klinik')->onDelete('cascade');

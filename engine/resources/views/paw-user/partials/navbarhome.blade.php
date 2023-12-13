@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Paw Care</a>
+    <a class="navbar-brand" href="{{route('pawcare.dash')}}">Paw Care</a>
     <div class="search-box">
         <!-- Pinterest-like Search Bar -->
         <form class="form-inline">
@@ -13,7 +13,7 @@
             Admin
         </button>
         @endif
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" onclick="location.href=`{{route('pawcare.activity')}}`">
             <i class="material-icons">assignment</i> My Activity
         </button>
         @if (empty(auth()->user()->foto))

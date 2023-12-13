@@ -1,0 +1,18 @@
+#radioContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.radioLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px; /* Atur margin sesuai kebutuhan */
+}
+
+.radioLabel img {
+    margin-bottom: 5px; /* Jarak antara gambar dan input radio */
+}

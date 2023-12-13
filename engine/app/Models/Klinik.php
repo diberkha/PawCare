@@ -16,6 +16,7 @@ class Klinik extends Model
         'nama',
         'alamat',
         'profile',
+        'images',
         'rating',
         'harga_rata2',
         'patients',

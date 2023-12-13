@@ -30,7 +30,7 @@
             <div class="col-md-11 ftco-animate text-center">
                 <h1 class="mb-4" style="font-size: 40px;">"Taking Care For Your Smart Pet's !"</h1>
                 <h1 class="mb-4" style="font-size: 20px;">Human-canine bonding is the relationship between pets and humans</h1>
-                <p><a href="#" class="btn btn-primary mr-md-4 py-3 px-4">Learn more <span class="ion-ios-arrow-forward"></span></a></p>
+                <p><a href="{{route('pawcare.dash')}}" class="btn btn-primary mr-md-4 py-3 px-4">Get Started <span class="ion-ios-arrow-forward"></span></a></p>
             </div>
         </div>
     </div>

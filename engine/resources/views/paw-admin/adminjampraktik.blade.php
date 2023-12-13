@@ -1,6 +1,6 @@
 @extends('paw-admin.masteradmin')
 
-@section('title', 'Klinik Admin')
+@section('title', 'Jam Praktik Admin')
 
 @section('preloader')
     <div class="preloader flex-column justify-content-center align-items-center">
@@ -16,12 +16,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Daftar Klinik</h1>
+            <h1>Daftar Jam Praktik</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('pawcare.admindash') }}">Home</a></li>
-              <li class="breadcrumb-item active">Daftar Klinik</li>
+              <li class="breadcrumb-item active">Daftar Jam Praktik</li>
             </ol>
           </div>
         </div>
@@ -35,40 +35,32 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Daftar Klinik</h3>
+                <h3 class="card-title">Daftar Jam Praktik</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <div class="table-responsive">
-                    <a href="{{ route('pawcare.addKlinik') }}" class="btn btn-primary mb-3">Tambah Klinik</a>
+                    <a href="{{ route('pawcare.addJamPraktik') }}" class="btn btn-primary mb-3">Tambah Jam Praktik</a>
                     <table class="table table-bordered">
                         <thead>
                         <?php $no=1; ?>
                         <tr>
                             <th>No</th>
                             <th>Nama Klinik</th>
-                            <th>Alamat</th>
-                            <th>Profile</th>
-                            <th>Gambar</th>
-                            <th>Rating</th>
-                            <th>Harga Rata-rata</th>
-                            <th>Patients</th>
+                            <th>Mulai</th>
+                            <th>Selesai</th>
                             <th>Tools</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($kliniks as $klinik)
+                        @foreach($jamPraktiks as $jamPraktik)
                         <tr>
                             <td>{{ $no }}</td>
-                            <td>{{ $klinik->nama }}</td>
-                            <td>{{ $klinik->alamat }}</td>
-                            <td>{{ $klinik->profile }}</td>
-                            <td><img src="{{ asset('images/clinicpic/' . $klinik->images) }}" alt="klinikimage"></td>
-                            <td>{{ $klinik->rating }}</td>
-                            <td>Rp. {{ $klinik->harga_rata2 }}</td>
-                            <td>{{ $klinik->patients }}</td>
+                            <td>{{ $jamPraktik->nama_klinik }}</td>
+                            <td>{{ $jamPraktik->mulai }}</td>
+                            <td>{{ $jamPraktik->selesai }}</td>
                             <td>
-                                <a href="{{route('pawcare.editKlinik', $klinik->id)}}" class="btn btn-warning">Edit</a>
+                                <a href="{{route('pawcare.editJamPraktik', $jamPraktik->id)}}" class="btn btn-warning">Edit</a>
                                 <form onsubmit="return confirm('Apakah Anda Yakin?');"
                                 action="" method="post"
                                 style="display:inline;">

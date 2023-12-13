@@ -1,0 +1,165 @@
+
+  
+  header {
+      color: #000000; 
+      text-align:left; 
+      margin-left: 50px;
+      margin-top: 50px;
+      margin-bottom: 25px;
+  }
+  header h1 {
+      font-size: 30px;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight:bolder;
+  }
+  
+  article {
+      margin-left: 50px;
+      margin-bottom: 25px;
+  }
+  
+  .article-container {
+      max-width: 900px;
+  }
+  
+  .location-search-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #f4f4f4;
+      padding: 20px;
+  }
+  
+  .location-button {
+      background-color: #6b6d6b;
+      color: #fff;
+      padding: 10px; 
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+  }
+  
+  .location-button img {
+      width: 20px; 
+       }
+  
+  .location-button span {
+      margin-left: 10px;
+  }
+  
+  
+  .search-section input {
+      width: 700px;
+      height: 50px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+  }
+  
+  .search-button-section button {
+      padding: 9px;
+      background-color: #6b6d6b;
+      color: #fff;
+      border:#ffffff;
+      border-radius: 20px;
+      cursor: pointer;
+  }
+  
+  .container1 {
+      display: flex;
+  }
+  
+  .city-section {
+      width: 30%;
+      padding: 20px;
+      margin-left: 40px;
+  }
+  
+  .hospital-section {
+      width: 70%;
+      padding: 20px;
+  }
+  
+  ul {
+      list-style-type: none;
+      padding: 0;
+  }
+  
+  li {
+      margin-bottom: 10px;
+  }
+  
+  .hospital-item {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 10px;
+  }
+  
+  .left-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+     
+  }
+  
+  .upper-left {
+      display: flex;
+      align-items: center;
+      flex: 5;
+      margin-bottom: 10px;
+  }
+  
+  .lower-left {
+      margin-top: 5px;
+      color: #e21c1c;
+      font-weight: bold;
+      font-size: 15px;
+      flex: 1;
+  }
+  
+  .right-section {
+      width: 30%; /* Bagi bagian kanan menjadi 50% lebar item */
+      margin-left: 20px;
+      padding-left: 20px; /* Berikan ruang di sekitar garis vertikal */
+      border-left: 1px solid #ddd; /* Tambahkan garis vertikal di antara kiri dan kanan */
+  }
+  
+  .hospital-item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 20px;
+  }
+  
+  .hospital-info h3,
+  .hospital-info p {
+      margin: 0;
+  }
+  
+  .hospital-info h3 {
+      font-size: 16px;
+  }
+  
+  .hospital-info p {
+      font-size: 14px;
+  }
+  
+  .rating,
+  .cost {
+      margin-bottom: 10px;
+  }
+  
+  .appointment-button {
+      background-color: #6b6d6b;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  
+  

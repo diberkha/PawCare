@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('alamat');
             $table->string('profile');
+            $table->string('images');
             $table->float('rating');
             $table->biginteger('harga_rata2');
             $table->biginteger('patients');

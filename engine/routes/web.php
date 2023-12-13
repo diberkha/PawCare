@@ -51,9 +51,20 @@ Route::get('/', [UserController::class, 'index'])->name('pawcare.home');
 
 Route::group(['middleware' => ['auth','ceklevel:admin']], function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('pawcare.admindash');
+
+    //Klinik
     Route::get('/adminklinik', [AdminController::class, 'showKlinik'])->name('pawcare.adminklinik');
     Route::get('/addklinik', [AdminController::class, 'createKlinik'])->name('pawcare.addKlinik');
+    Route::get('/editklinik-{id}', [AdminController::class, 'editKlinik'])->name('pawcare.editKlinik');
+    Route::put('/updateklinik-{id}', [AdminController::class, 'updateKlinik'])->name('pawcare.updateKlinik');
     Route::post('/prosesaddklinik', [AdminController::class, 'storeKlinik'])->name('pawcare.prosesaddklinik');
+
+    //Jam Praktik
+    Route::get('/adminjampraktik', [AdminController::class, 'showJamPraktik'])->name('pawcare.adminJamPraktik');
+    Route::get('/addjampraktik', [AdminController::class, 'createJamPraktik'])->name('pawcare.addJamPraktik');
+    Route::post('/prosesaddjampraktik', [AdminController::class, 'storeJamPraktik'])->name('pawcare.prosesaddjampraktik');
+    Route::get('/editjampraktik-{id}', [AdminController::class, 'editJamPraktik'])->name('pawcare.editJamPraktik');
+    Route::put('/updateklinik-{id}', [AdminController::class, 'updateJamPraktik'])->name('pawcare.updateJamPraktik');
 });
 
 Route::group(['middleware' => ['auth','ceklevel:admin,user']], function () {
@@ -65,7 +76,10 @@ Route::group(['middleware' => ['auth','ceklevel:admin,user']], function () {
 });
 
 Route::group(['middleware' => ['auth','verified']], function () {
-    Route::get('/appointment', [UserController::class, 'appointment'])->name('pawcare.appointment');
+    Route::get('/appointment-{id}', [UserController::class, 'appointment'])->name('pawcare.appointment');
+    Route::post('/create-appointment', [UserController::class, 'createappointment'])->name('pawcare.createappointment');
+    Route::get('/cliniclist', [UserController::class, 'cliniclist'])->name('pawcare.cliniclist');
+    Route::get('/clinicdetails-{id}', [UserController::class, 'clinicdetails'])->name('pawcare.clinicdetails');
     Route::get('/confirm-user', [UserController::class, 'confirmuser'])->name('pawcare.confirmuser');
-    Route::get('/form', [UserController::class, 'petform'])->name('pawcare.petform');
+    Route::get('/activity', [UserController::class, 'activity'])->name('pawcare.activity');
 });

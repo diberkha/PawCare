@@ -16,12 +16,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Form Tambah Data Klinik</h1>
+                    <h1>Form Edit Data Klinik</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('pawcare.admindash') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Form Tambah Data Klinik</li>
+                        <li class="breadcrumb-item active">Form Edit Data Klinik</li>
                     </ol>
                 </div>
             </div>
@@ -37,33 +37,35 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Tambah Data Klinik</h3>
+                            <h3 class="card-title">Edit Data Klinik</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form id="quickForm" novalidate="novalidate" method="POST" action="{{ route('pawcare.prosesaddklinik') }}" enctype="multipart/form-data">
+                        <form id="quickForm" novalidate="novalidate" method="POST" action="{{ route('pawcare.updateKlinik', $klinik->id) }}" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="namaKlinik">Nama Klinik</label>
-                                    <input type="text" class="form-control" id="namaKlinik" name="nama" placeholder="Enter Nama Klinik" required>
+                                    <input type="text" class="form-control" id="namaKlinik" name="nama" value="{{$klinik->nama}}" required>
                                     <label for="alamatKlinik">Alamat Klinik</label>
-                                    <input type="text" class="form-control" id="alamatKlinik" name="alamat" placeholder="Enter Alamat Klinik" required>
+                                    <input type="text" class="form-control" id="alamatKlinik" name="alamat" value="{{$klinik->alamat}}" required>
                                     <label for="profileKlinik">Profile Singkat</label>
-                                    <textarea class="form-control" id="profileKlinik" name="profile" placeholder="Enter Profile Klinik" rows="4" cols="50" required></textarea>
+                                    <textarea class="form-control" id="profileKlinik" name="profile" rows="4" cols="50" required>{{$klinik->profile}}</textarea>
+                                    <img src="{{ asset('images/clinicpic/' . $klinik->images) }}" alt="klinikimage">
                                     <label for="images">Upload Gambar :</label>
                                     <input type="file" class="form-control" id="images" name="images">
                                     <label for="rating">Rating</label>
-                                    <input type="number" name="rating" class="form-control" id="rating" step="0.1" min="0" max="5" placeholder="Masukkan rating (0.0 - 5.0)" required>
+                                    <input type="number" name="rating" class="form-control" id="rating" step="0.1" min="0" max="5" placeholder="Masukkan rating (0.0 - 5.0)" value="{{$klinik->rating}}" required>
                                     <label for="hargaRata2">Harga Rata-rata</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">Rp</span>
                                         </div>
-                                        <input type="number" name="harga_rata2" id="hargaRata2" class="form-control" placeholder="Enter Harga Rata-rata Pembuatan Janji" required>
+                                        <input type="number" name="harga_rata2" id="hargaRata2" class="form-control" placeholder="Enter Harga Rata-rata Pembuatan Janji" value="{{$klinik->harga_rata2}}" required>
                                     </div>
                                     <label for="patients">Jumlah Pasien</label>
-                                    <input type="number" name="patients" id="patients" class="form-control" placeholder="Enter Jumlah Pasien Saat Ini" required>
+                                    <input type="number" name="patients" id="patients" class="form-control" placeholder="Enter Jumlah Pasien Saat Ini" value="{{$klinik->patients}}" required>
                                     @if ($errors->any())
                                     <div class="alert alert-danger">
                                         <ul>

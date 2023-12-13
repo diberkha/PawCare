@@ -58,15 +58,12 @@
                         <p class="form-control-static mb-2">{{auth()->user()->email}}</p>
                         <p>You can't change your email because you have connected your Google account.</p>
                     </div>
+                    @if(empty(auth()->user()->email_verified_at))
                     <div class="col-md-12">
-                        <h6>New Password</h6>
-                        <input type="password" class="form-control mb-2">
+                        <p>Your email hasn't been verified yet.</p>
+                        <a href="{{ route('verification.send') }}" class="btn btn-dark mt-3">Verify Now</a>
                     </div>
-                    <div class="col-md-12">
-                        <h6>Confirmation New Password</h6>
-                        <input type="password" class="form-control mb-2">
-                        <a href="my-profile.html" class="btn btn-dark mt-3">Save Changes</a>
-                    </div>
+                    @endif
                 </div>
 
                 <!-- Right Column -->
