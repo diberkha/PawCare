@@ -63,12 +63,12 @@
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->country }}</td>
                             <td>{{ $user->phoneNumber }}</td>
-                            <td>{{ $user->foto }}</td>
+                            <td><img src="{{ asset('images/userprofilepic/' . $user->foto) }}" alt="UserPP" height="100" width="100"></td>
                             <td>{{ $user->email_verified_at }}</td>
                             <td>
-                                <a href="" class="btn btn-warning">Edit</a>
+                                <a href="{{route('pawcare.editUsers', $user->id)}}" class="btn btn-warning">Edit</a>
                                 <form onsubmit="return confirm('Apakah Anda Yakin?');"
-                                action="" method="post"
+                                action="{{route('pawcare.destroyUsers', $user->id)}}" method="post"
                                 style="display:inline;">
                                     @csrf
                                     @method('DELETE')

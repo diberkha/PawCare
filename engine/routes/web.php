@@ -48,6 +48,8 @@ Route::post('/email/verification-notification', function (Request $request) {
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 Route::get('/', [UserController::class, 'index'])->name('pawcare.home');
+Route::get('/about', [UserController::class, 'about'])->name('pawcare.about');
+Route::get('/contact', [UserController::class, 'contact'])->name('pawcare.contact');
 
 Route::group(['middleware' => ['auth','ceklevel:admin']], function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('pawcare.admindash');
@@ -58,6 +60,7 @@ Route::group(['middleware' => ['auth','ceklevel:admin']], function () {
     Route::get('/editklinik-{id}', [AdminController::class, 'editKlinik'])->name('pawcare.editKlinik');
     Route::put('/updateklinik-{id}', [AdminController::class, 'updateKlinik'])->name('pawcare.updateKlinik');
     Route::post('/prosesaddklinik', [AdminController::class, 'storeKlinik'])->name('pawcare.prosesaddklinik');
+    Route::delete('/deleteklinik-{id}', [AdminController::class, 'destroyKlinik'])->name('pawcare.destroyKlinik');
 
     //Jam Praktik
     Route::get('/adminjampraktik', [AdminController::class, 'showJamPraktik'])->name('pawcare.adminJamPraktik');
@@ -65,11 +68,21 @@ Route::group(['middleware' => ['auth','ceklevel:admin']], function () {
     Route::post('/prosesaddjampraktik', [AdminController::class, 'storeJamPraktik'])->name('pawcare.prosesaddjampraktik');
     Route::get('/editjampraktik-{id}', [AdminController::class, 'editJamPraktik'])->name('pawcare.editJamPraktik');
     Route::put('/updateklinik-{id}', [AdminController::class, 'updateJamPraktik'])->name('pawcare.updateJamPraktik');
-
+    Route::delete('/deletejampraktik-{id}', [AdminController::class, 'destroyJamPraktik'])->name('pawcare.destroyJamPraktik');
+    
     //Users
     Route::get('/adminusers', [AdminController::class, 'showUsers'])->name('pawcare.adminUsers');
     Route::get('/adduser', [AdminController::class, 'createUsers'])->name('pawcare.addUsers');
     Route::post('/prosesadduser', [AdminController::class, 'storeUsers'])->name('pawcare.prosesadduser');
+    Route::get('/edituser-{id}', [AdminController::class, 'editUsers'])->name('pawcare.editUsers');
+    Route::put('/updateuser-{id}', [AdminController::class, 'updateUsers'])->name('pawcare.updateuser');
+    Route::delete('/deleteuser-{id}', [AdminController::class, 'destroyUsers'])->name('pawcare.destroyUsers');
+
+    //Appointments
+    Route::get('/adminappoitnments', [AdminController::class, 'showAppointments'])->name('pawcare.adminAppointments');
+    Route::get('/editappointments-{id}', [AdminController::class, 'editAppointments'])->name('pawcare.editAppointments');
+    Route::put('/prosesupdateappointments-{id}', [AdminController::class, 'storeAppointments'])->name('pawcare.prosesaddAppointments');
+    Route::delete('/deleteappointment-{id}', [AdminController::class, 'destroyAppointments'])->name('pawcare.destroyAppointments');
 });
 
 Route::group(['middleware' => ['auth','ceklevel:admin,user']], function () {

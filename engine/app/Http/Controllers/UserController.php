@@ -13,6 +13,14 @@ class UserController extends Controller
     {
         return view('paw-user.index');
     }
+    public function about()
+    {
+        return view('paw-user.about');
+    }
+    public function contact()
+    {
+        return view('paw-user.contact');
+    }
     public function home()
     {
         return view('paw-user.home');

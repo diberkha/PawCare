@@ -1,5 +1,9 @@
 @extends('paw-user.masternofooter')
 
+@php
+use Carbon\Carbon;
+@endphp
+
 @section('title', 'Paw Care - Make an Appointment')
 
 @push('aditional-css')
@@ -51,7 +55,7 @@
                             <select name="jadwal" id="" class="form-control">
                                 <option value="" selected hidden>Choose Schedule</option>
                                 @foreach($klinik->jamPraktik as $jamPraktik)
-                                <option value="{{$jamPraktik->mulai}} - {{$jamPraktik->selesai}}">{{$jamPraktik->mulai}} - {{$jamPraktik->selesai}}</option>
+                                <option value="{{Carbon::parse($jamPraktik->mulai)->format('H:i')}} - {{Carbon::parse($jamPraktik->selesai)->format('H:i')}}">{{Carbon::parse($jamPraktik->mulai)->format('H:i')}} - {{Carbon::parse($jamPraktik->selesai)->format('H:i')}}</option>
                                 @endforeach
                             </select>
                         </div>

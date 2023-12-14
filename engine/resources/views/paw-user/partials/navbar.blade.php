@@ -6,11 +6,11 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a href="{{route('pawcare.home')}}" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Product</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="{{route('pawcare.home')}}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{route('pawcare.about')}}" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{{route('pawcare.dash')}}" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="{{route('pawcare.dash')}}" class="nav-link">Product</a></li>
+                <li class="nav-item"><a href="{{route('pawcare.contact')}}" class="nav-link">Contact</a></li>
                 @if (!empty(auth()->user()->name) && auth()->user()->level=="admin")
                 <li class="nav-item"><a href="{{route('pawcare.admindash')}}" class="nav-link">Admin</a></li>
                 @endif

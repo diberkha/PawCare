@@ -1,6 +1,6 @@
 @extends('paw-admin.masteradmin')
 
-@section('title', 'Jam Praktik Admin')
+@section('title', 'Appointment Admin')
 
 @section('preloader')
     <div class="preloader flex-column justify-content-center align-items-center">
@@ -16,12 +16,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Daftar Jam Praktik</h1>
+            <h1>Daftar Appointment</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('pawcare.admindash') }}">Home</a></li>
-              <li class="breadcrumb-item active">Daftar Jam Praktik</li>
+              <li class="breadcrumb-item active">Daftar Appointment</li>
             </ol>
           </div>
         </div>
@@ -35,34 +35,45 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Daftar Jam Praktik</h3>
+                <h3 class="card-title">Daftar Appointment</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <div class="table-responsive">
-                    <a href="{{ route('pawcare.addJamPraktik') }}" class="btn btn-primary mb-3">Tambah Jam Praktik</a>
                     <table class="table table-bordered">
                         <thead>
                         <?php $no=1; ?>
                         <tr>
                             <th>No</th>
+                            <th>Nama User</th>
                             <th>Nama Klinik</th>
-                            <th>Mulai</th>
-                            <th>Selesai</th>
+                            <th>Kategori</th>
+                            <th>Waktu Pertemuan</th>
+                            <th>Tanggal Pertemuan</th>
+                            <th>Komplain</th>
+                            <th>Waktu Pembuatan</th>
+                            <th>Tanggal Pembuatan</th>
+                            <th>Status</th>
                             <th>Tools</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($jamPraktiks as $jamPraktik)
+                        @foreach($appointments as $appointment)
                         <tr>
                             <td>{{ $no }}</td>
-                            <td>{{ $jamPraktik->nama_klinik }}</td>
-                            <td>{{ $jamPraktik->mulai }}</td>
-                            <td>{{ $jamPraktik->selesai }}</td>
+                            <td>{{ $appointment->nama_user }}</td>
+                            <td>{{ $appointment->nama_klinik }}</td>
+                            <td>{{ $appointment->kategori }}</td>
+                            <td>{{ $appointment->jadwal }}</td>
+                            <td>{{ $appointment->tanggal_jadwal }}</td>
+                            <td>{{ $appointment->complaint }}</td>
+                            <td>{{ $appointment->waktu_pembuatan }}</td>
+                            <td>{{ $appointment->tanggal_pembuatan }}</td>
+                            <td>{{ $appointment->status }}</td>
                             <td>
-                                <a href="{{route('pawcare.editJamPraktik', $jamPraktik->id)}}" class="btn btn-warning">Edit</a>
+                                <a href="{{route('pawcare.editAppointments', $appointment->id)}}" class="btn btn-warning">Edit</a>
                                 <form onsubmit="return confirm('Apakah Anda Yakin?');"
-                                action="{{route('pawcare.destroyJamPraktik', $jamPraktik->id)}}" method="post"
+                                action="{{route('pawcare.destroyAppointments', $appointment->id)}}" method="post"
                                 style="display:inline;">
                                     @csrf
                                     @method('DELETE')

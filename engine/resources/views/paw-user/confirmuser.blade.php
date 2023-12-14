@@ -1,6 +1,6 @@
 @extends('paw-user.masternofooter')
 
-@section('title', 'PawCare - Pet`s Owner Biodata')
+@section('title', 'PawCare - Make an Appointment')
 
 @push('aditional-css')
 <!-- Bootstrap CSS -->

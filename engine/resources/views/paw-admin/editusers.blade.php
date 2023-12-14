@@ -41,8 +41,9 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form id="quickForm" novalidate="novalidate" method="POST" action="{{ route('pawcare.prosesadduser') }}" enctype="multipart/form-data">
+                        <form id="quickForm" novalidate="novalidate" method="POST" action="{{ route('pawcare.updateuser', $user->id) }}" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                             <div class="card-body">
                                 @if(session('error'))
                                 <div class="alert alert-danger">
@@ -51,20 +52,23 @@
                                 @endif
                                 <div class="form-group">
                                     <label for="nama">Nama Lengkap</label>
-                                    <input type="text" class="form-control" id="nama" name="name" placeholder="Enter Nama Lengkap User" required>
+                                    <input type="text" class="form-control" id="nama" name="name" value="{{$user->name}}" required>
                                     <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" required>
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+                                    <input type="email" class="form-control" id="email" name="email" value="{{$user->email}}" required>
+                                    <label for="password">New Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter New Password">
                                     <label for="cpassword">Confirm Password</label>
-                                    <input type="password" class="form-control" id="cpassword" name="confirmPassword" placeholder="Enter Confirm Password" required>
+                                    <input type="password" class="form-control" id="cpassword" name="confirmPassword" placeholder="Enter Confirm Password">
                                     <label for="country">Country</label>
                                     <select name="country" id="country" class="form-control">
-                                        <option value="" selected hidden>Pilih Country User</option>
+                                        <option value="{{$user->country}}" selected hidden>{{$user->country}}</option>
                                         <option value="Indonesia">Indonesia</option>
                                     </select>
                                     <label for="phoneNumber">Phone Number</label>
-                                    <input type="phonenumber" class="form-control" id="phoneNumber" name="phoneNumber">
+                                    <input type="phonenumber" class="form-control" id="phoneNumber" name="phoneNumber" value="0{{$user->phoneNumber}}">
+                                    @if(!empty($user->foto))
+                                    <img src="{{ asset('images/userprofilepic/' . $user->foto) }}" alt="UserPP" height="100" width="100">
+                                    @endif
                                     <label for="images">Upload Foto</label>
                                     <input type="file" class="form-control" id="images" name="foto">
                                     @if ($errors->any())

@@ -70,7 +70,7 @@
                             <td>
                                 <a href="{{route('pawcare.editKlinik', $klinik->id)}}" class="btn btn-warning">Edit</a>
                                 <form onsubmit="return confirm('Apakah Anda Yakin?');"
-                                action="" method="post"
+                                action="{{route('pawcare.destroyKlinik', $klinik->id)}}" method="post"
                                 style="display:inline;">
                                     @csrf
                                     @method('DELETE')
