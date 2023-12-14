@@ -65,6 +65,11 @@ Route::group(['middleware' => ['auth','ceklevel:admin']], function () {
     Route::post('/prosesaddjampraktik', [AdminController::class, 'storeJamPraktik'])->name('pawcare.prosesaddjampraktik');
     Route::get('/editjampraktik-{id}', [AdminController::class, 'editJamPraktik'])->name('pawcare.editJamPraktik');
     Route::put('/updateklinik-{id}', [AdminController::class, 'updateJamPraktik'])->name('pawcare.updateJamPraktik');
+
+    //Users
+    Route::get('/adminusers', [AdminController::class, 'showUsers'])->name('pawcare.adminUsers');
+    Route::get('/adduser', [AdminController::class, 'createUsers'])->name('pawcare.addUsers');
+    Route::post('/prosesadduser', [AdminController::class, 'storeUsers'])->name('pawcare.prosesadduser');
 });
 
 Route::group(['middleware' => ['auth','ceklevel:admin,user']], function () {

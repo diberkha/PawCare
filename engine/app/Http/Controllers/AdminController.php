@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\JamPraktik;
 use App\Models\Klinik;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,10 +16,6 @@ class AdminController extends Controller
     public function showKlinik() {
         $kliniks = Klinik::all();
         return view('paw-admin.adminklinik', compact('kliniks'));
-    }
-    public function editKlinik($id) {
-        $klinik = Klinik::findOrFail($id);
-        return view('paw-admin.editklinik', compact('klinik'));
     }
     public function createKlinik() {
         return view('paw-admin.formklinik');
@@ -36,7 +33,7 @@ class AdminController extends Controller
         $image = $request->file('images');
         $nama_file = time() . '.' . $image->getClientOriginalExtension();
         $image->move('images/clinicpic/', $nama_file);
-
+        
         $klinik = new Klinik();
         $klinik->nama = $request->nama;
         $klinik->alamat = $request->alamat;
@@ -47,6 +44,11 @@ class AdminController extends Controller
         $klinik->patients = $request->patients;
         $klinik->save();
         return redirect()->route('pawcare.adminklinik');
+    }
+    
+    public function editKlinik($id) {
+        $klinik = Klinik::findOrFail($id);
+        return view('paw-admin.editklinik', compact('klinik'));
     }
 
     public function updateKlinik(Request $request, $id) {
@@ -128,4 +130,15 @@ class AdminController extends Controller
         return redirect()->route('pawcare.adminJamPraktik');
     }
 
+
+
+    public function showUsers()
+    {
+        $users = User::where('level', '!=', 'admin')->get();
+        return view('paw-admin.adminusers', compact('users'));
+    }
+    public function createUsers()
+    {
+        return view('paw-admin.formusers');
+    }
 }

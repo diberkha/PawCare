@@ -11,14 +11,6 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-            Table
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="">Daftar Agama</a></li>
-          </ul>
-      </li>
       <li class="nav-item">
         <a class="nav-link" href="{{route('pawcare.logout')}}"><i class="fas fa-sign-out-alt"></i> Log Out</a>
       </li>
