@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2023 at 08:06 PM
+-- Generation Time: Dec 15, 2023 at 12:10 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -47,8 +47,7 @@ CREATE TABLE `appointments` (
 --
 
 INSERT INTO `appointments` (`id`, `nama_klinik`, `user_id`, `kategori`, `jadwal`, `complaint`, `tanggal_jadwal`, `status`, `waktu_pembuatan`, `tanggal_pembuatan`, `created_at`, `updated_at`) VALUES
-(2, 'Klinik Hewan KHJ Solo', 1, 'Dog', '08:00:00 - 10:00:00', 'Anjing Sakit Gigi', '2023-12-16', 'Approved', '01:19:00', '2023-12-14', '2023-12-13 18:19:00', '2023-12-13 18:19:00'),
-(3, 'Klinik Hewan ADIKA', 1, 'Cat', '13:00:00 - 16:00:00', 'Kucing saya malas', '2023-12-23', 'Pending', '01:20:30', '2023-12-14', '2023-12-13 18:20:30', '2023-12-13 18:20:30');
+(6, 'Klinik Hewan KHJ Solo', 1, 'Dog', '08:00 - 10:00', 'Anjing Sakit', '2023-12-18', 'Pending', '02:09:39', '2023-12-15', '2023-12-14 19:09:39', '2023-12-14 19:09:39');
 
 -- --------------------------------------------------------
 
@@ -90,7 +89,18 @@ INSERT INTO `jam_praktik` (`id`, `klinik_id`, `mulai`, `selesai`, `created_at`, 
 (2, 1, '11:00:00', '13:00:00', '2023-12-13 08:44:41', '2023-12-13 08:44:41'),
 (3, 1, '14:00:00', '16:00:00', '2023-12-13 08:45:01', '2023-12-13 08:45:01'),
 (4, 2, '09:00:00', '12:00:00', '2023-12-13 09:10:18', '2023-12-13 09:10:18'),
-(5, 2, '13:00:00', '16:00:00', '2023-12-13 09:10:39', '2023-12-13 09:10:39');
+(5, 2, '13:00:00', '16:00:00', '2023-12-13 09:10:39', '2023-12-13 09:10:39'),
+(7, 4, '09:00:00', '11:30:00', '2023-12-15 03:03:58', '2023-12-15 03:05:08'),
+(8, 4, '13:00:00', '15:30:00', '2023-12-15 03:04:34', '2023-12-15 03:05:26'),
+(9, 4, '16:30:00', '18:00:00', '2023-12-15 03:05:56', '2023-12-15 03:05:56'),
+(10, 5, '08:00:00', '11:00:00', '2023-12-15 03:10:05', '2023-12-15 03:10:05'),
+(11, 5, '13:00:00', '16:00:00', '2023-12-15 03:10:20', '2023-12-15 03:10:20'),
+(12, 5, '17:00:00', '19:00:00', '2023-12-15 03:11:01', '2023-12-15 03:11:01'),
+(13, 6, '08:30:00', '12:00:00', '2023-12-15 03:15:11', '2023-12-15 03:15:11'),
+(14, 6, '13:00:00', '14:30:00', '2023-12-15 03:15:36', '2023-12-15 03:15:36'),
+(15, 6, '15:30:00', '17:30:00', '2023-12-15 03:15:55', '2023-12-15 03:15:55'),
+(16, 7, '10:00:00', '12:30:00', '2023-12-15 03:16:20', '2023-12-15 03:16:20'),
+(17, 7, '14:00:00', '16:30:00', '2023-12-15 03:17:01', '2023-12-15 03:17:01');
 
 -- --------------------------------------------------------
 
@@ -117,7 +127,11 @@ CREATE TABLE `klinik` (
 
 INSERT INTO `klinik` (`id`, `nama`, `alamat`, `profile`, `images`, `rating`, `harga_rata2`, `patients`, `created_at`, `updated_at`) VALUES
 (1, 'Klinik Hewan KHJ Solo', 'Jl. Menteri Supeno No.7, Manahan, Banjarsari Regency, Surakarta City, Central Java 57139, Indonesia.', 'KHJ Solo Animal Clinic is dedicated to serving the community of Surakarta and its surroundings by providing healthcare services for beloved pets. Ready to serve with love and professionalism, we are open 24/7. KHJ Solo is equipped with comprehensive and modern facilities for animal health examinations, including examination rooms, procedure rooms, and a representative inpatient area. Our clinic offers a serene, clean, and pleasant environment. Additionally, KHJ Solo provides ample parking space and a dedicated ambulance for the pick-up and drop-off services for your beloved pets.', '1702473889.png', 4.50, 200000, 10000, '2023-12-12 12:05:02', '2023-12-13 06:24:49'),
-(2, 'Klinik Hewan ADIKA', 'Jl. K.H Ahmad Dahlan No.52, Keprabon, Banjarsari District, Surakarta City, Central Java 57131, Indonesia.', 'Klinik Hewan ADIKA is a well-established veterinary clinic that provides comprehensive pet care services. Located in [lokasi], this clinic offers a wide range of veterinary services for various animals, including dogs, cats, birds, and exotic pets. With a team of experienced veterinarians and dedicated staff, Klinik Hewan ADIKA focuses on delivering high-quality medical treatment, preventive care, surgical procedures, vaccinations, and grooming services for pets. Their commitment to animal welfare and passion for providing excellent care has earned them a reputation for being a trusted and reliable veterinary clinic within the community.', '1702474988.png', 4.80, 159000, 3000, '2023-12-13 06:43:08', '2023-12-13 06:43:08');
+(2, 'Klinik Hewan ADIKA', 'Jl. K.H Ahmad Dahlan No.52, Keprabon, Banjarsari District, Surakarta City, Central Java 57131, Indonesia.', 'Klinik Hewan ADIKA is a well-established veterinary clinic that provides comprehensive pet care services. Located in [lokasi], this clinic offers a wide range of veterinary services for various animals, including dogs, cats, birds, and exotic pets. With a team of experienced veterinarians and dedicated staff, Klinik Hewan ADIKA focuses on delivering high-quality medical treatment, preventive care, surgical procedures, vaccinations, and grooming services for pets. Their commitment to animal welfare and passion for providing excellent care has earned them a reputation for being a trusted and reliable veterinary clinic within the community.', '1702474988.png', 4.80, 159000, 3000, '2023-12-13 06:43:08', '2023-12-13 06:43:08'),
+(4, 'PawHealth Clinic', 'Jl. Kesehatan No. 123, Surakarta, Central Java, Indonesia', 'PawHealth Clinic is a leading animal care center in our city. With an experienced team of veterinarians and modern facilities, we are committed to providing the best healthcare services for your furry friends. We offer general check-ups, vaccinations, dental care, and surgical services. The health and happiness of your pets are our top priorities.', '1702609321.jpg', 4.80, 125000, 500, '2023-12-15 03:02:01', '2023-12-15 03:02:01'),
+(5, 'PawCare Veterinary Center', 'Jl. Hewan Bahagia No. 45, Surakarta, Central Java, Indonesia', 'PawCare Veterinary Center is a pet-friendly place, providing comprehensive healthcare for pets. Our professional team excels in diagnosis and treatment, and we are dedicated to creating a positive experience for both pets and their owners. Services include health check-ups, vaccinations, and nutritional consultations.', '1702609682.jpg', 4.50, 143000, 300, '2023-12-15 03:08:02', '2023-12-15 03:08:02'),
+(6, 'PetWellness Veterinary Care', 'Jl. Sejahtera No. 78, Surakarta, Central Java, Indonesia', 'At PetWellness Veterinary Care, we prioritize the well-being of your pets. Our dedicated team of veterinarians and state-of-the-art facilities ensure top-notch healthcare services. From routine check-ups and preventive care to specialized treatments, we are committed to keeping your pets healthy and happy.', '1702609956.jpg', 4.90, 136000, 700, '2023-12-15 03:12:36', '2023-12-15 03:12:36'),
+(7, 'HappyPaws Animal Clinic', 'Jl. Kebahagiaan No. 321, Surakarta, Central Java, Indonesia', 'Welcome to HappyPaws Animal Clinic, where the joy of pets is our priority. Our team of compassionate veterinarians provides comprehensive care, including vaccinations, grooming, and nutritional guidance. We understand the unique bond between pets and their owners, and we strive to enhance and prolong that relationship through quality healthcare.', '1702610026.jpg', 4.70, 174000, 400, '2023-12-15 03:13:46', '2023-12-15 03:13:46');
 
 -- --------------------------------------------------------
 
@@ -207,7 +221,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `level`, `country`, `phoneNumber`, `foto`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Alfian Haris Sofyan', 'alfianharis032@gmail.com', 'admin', 'Indonesia', 82123123123, '1702483934.png', '2023-12-10 08:32:04', '$2y$12$ah7bl58L3V0/NDGZUzUp/uU3VxJS6IUuwZx0xPCTHXWvoAMMpPgP6', NULL, '2023-12-10 08:31:38', '2023-12-13 09:12:14'),
 (2, 'Pian HS', 'alfianhsofyan7@gmail.com', 'user', 'Indonesia', 81098765432, NULL, '2023-12-13 18:48:58', '$2y$12$bjiS3TJeiVaalCbcSaGFEukXOMbY5lIxYwSAtNMVsSNwRb0smbf92', NULL, '2023-12-13 18:48:27', '2023-12-13 18:48:58'),
-(3, 'fatkul', 'fatkul12@gmail.com', 'user', 'Indonesia', 8123456789, NULL, NULL, '$2y$12$qnszz07PpIR13xjT6kPWs.VUBSi8TnoWXiVCvQu2Oa4s526owXJUu', NULL, '2023-12-13 18:57:49', '2023-12-13 18:57:49');
+(4, 'Bagas Ferdi', 'bagasf32@gmail.com', 'user', 'Indonesia', 87361523123, '1702573007.png', NULL, '$2y$12$elQIrUShxPCPgVD0ehoCou.xNJdHbI8EY2jWALESoZHlsTiTGgxIu', NULL, '2023-12-14 16:32:12', '2023-12-14 16:56:47');
 
 --
 -- Indexes for dumped tables
@@ -275,7 +289,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -287,13 +301,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `jam_praktik`
 --
 ALTER TABLE `jam_praktik`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `klinik`
 --
 ALTER TABLE `klinik`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -311,7 +325,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
