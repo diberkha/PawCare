@@ -50,6 +50,7 @@ Route::post('/email/verification-notification', function (Request $request) {
 Route::get('/', [UserController::class, 'index'])->name('pawcare.home');
 Route::get('/about', [UserController::class, 'about'])->name('pawcare.about');
 Route::get('/contact', [UserController::class, 'contact'])->name('pawcare.contact');
+Route::get('/service', [UserController::class, 'service'])->name('pawcare.service');
 
 Route::group(['middleware' => ['auth','ceklevel:admin']], function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('pawcare.admindash');

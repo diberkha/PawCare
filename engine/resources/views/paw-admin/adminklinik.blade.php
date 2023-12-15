@@ -63,7 +63,7 @@
                             <td>{{ $klinik->nama }}</td>
                             <td>{{ $klinik->alamat }}</td>
                             <td>{{ $klinik->profile }}</td>
-                            <td><img src="{{ asset('images/clinicpic/' . $klinik->images) }}" alt="klinikimage"></td>
+                            <td><img src="{{ asset('images/clinicpic/' . $klinik->images) }}" alt="klinikimage" height="200" width="200"></td>
                             <td>{{ $klinik->rating }}</td>
                             <td>Rp. {{ $klinik->harga_rata2 }}</td>
                             <td>{{ $klinik->patients }}</td>

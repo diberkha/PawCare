@@ -21,6 +21,10 @@ class UserController extends Controller
     {
         return view('paw-user.contact');
     }
+    public function service()
+    {
+        return view('paw-user.service');
+    }
     public function home()
     {
         return view('paw-user.home');
